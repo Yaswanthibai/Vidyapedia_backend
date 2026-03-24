@@ -20,7 +20,11 @@ public class userController
     @Autowired
     PasswordEncoder passwordEncoder;
 
-
+    @GetMapping("/hi")
+    public ResponseEntity<String> greet()
+    {
+        return new ResponseEntity<>("Hello", HttpStatus.OK);
+    }
 
     // Registration endpoint with email validation
     @PostMapping("/api/user/register")
